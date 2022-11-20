@@ -13,7 +13,7 @@
 # print(data.split(";"))
 
 
-import task4
+from task4 import task4
 
 with open('data4.csv') as file:
     csvString = file.read()

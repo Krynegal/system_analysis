@@ -81,4 +81,5 @@ def task(j_input1, j_input2):
 
     res_matrix, s = get_s_matrix(input1, matrix1, matrix2)
     print_matrix(res_matrix)
-    print(s)
+    print_matrix(s)
+    return s
