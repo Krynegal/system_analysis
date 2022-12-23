@@ -14,12 +14,12 @@ def get_estimations_matrix(experts, ind):
     return m
 
 
-def get_k1(m, v1, est_num):
+def get_v2(m, v1, est_num):
     ones_matrix = [1] * est_num
     y = np.dot(m, v1)
     t = np.dot(ones_matrix, y)
-    k1 = np.dot(1 / t, y)
-    return k1
+    v2 = np.dot(1 / t, y)
+    return v2
 
 
 def task(input):
@@ -39,10 +39,10 @@ def task(input):
 
     est_num = len(estimations_matrices[0][0])
     v1 = [(1 / est_num) for _ in range(est_num)]
-    v2 = get_k1(m, v1, est_num)
+    v2 = get_v2(m, v1, est_num)
 
     while max(abs(v2 - v1)) >= 0.001:
         v1 = v2
-        v2 = get_k1(m, v1, est_num)
+        v2 = get_v2(m, v1, est_num)
 
     return v2
